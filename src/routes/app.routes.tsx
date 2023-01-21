@@ -1,20 +1,22 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
-import { Home } from '../screens/Home';
-import { New } from '../screens/New';
-import { Habit } from '../screens/Habit';
+import { Home } from "../screens/Home";
+import { New } from "../screens/New";
+import { Habit } from "../screens/Habit";
+import { Login } from "../screens/Login";
 
 export function AppRoutes() {
   return (
     <Navigator screenOptions={{ headerShown: false }}>
-      <Screen
+      <Screen name="login" component={Login} />
+      {/* <Screen
         name="home"
         component={Home}
-      />
+      /> */}
 
-      <Screen
+      {/* <Screen
         name="new"
         component={New}
       />
@@ -22,7 +24,7 @@ export function AppRoutes() {
       <Screen
         name="habit"
         component={Habit}
-      />
+      /> */}
     </Navigator>
-  )
+  );
 }
